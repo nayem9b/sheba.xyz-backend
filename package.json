@@ -3,12 +3,16 @@
   "version": "1.0.0",
   "main": "dist/server.js",
   "scripts": {
+    "build": "tsc",
     "start": "node dist/server.js",
     "dev": "nodemon ./src/server.ts",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "postinstall": "prisma generate"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "dependencies": {
     "@apollo/server": "^4.10.0",

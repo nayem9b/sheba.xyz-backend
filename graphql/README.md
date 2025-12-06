@@ -6,7 +6,7 @@ This is a standalone GraphQL microservice for the Sheba.xyz platform.
 
 ### Prerequisites
 
-- Node.js (v16+)
+- Node.js (v18+)
 - npm or yarn
 - Prisma setup with database connection
 

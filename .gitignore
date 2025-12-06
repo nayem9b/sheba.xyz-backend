@@ -5,3 +5,4 @@ configmap.yaml
 secret.yaml
 dist/
 dist/*
+.env*.local
