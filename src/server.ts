@@ -50,8 +50,18 @@ initializeApollo()
 export default app;
 
 // For local development and traditional deployments
+// Resolve port for both Render and local dev
+const port = process.env.PORT || config.port;
+
+// For local development and platform deployments
 if (require.main === module) {
-  app.listen(config.port, () => {
-    console.log(`Server is running on port ${config.port} `);
+  app.listen(parseInt(port as string), "0.0.0.0", () => {
+    console.log(`Server is running on port ${port}`);
   });
 }
+
+
+// const port = process.env.PORT || 3000;
+// app.listen(port, "0.0.0.0", () => {
+//   console.log(`Server is running on port ${port}`);
+// });
