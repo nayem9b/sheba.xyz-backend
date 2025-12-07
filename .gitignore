@@ -3,6 +3,4 @@ node_modules
 .vercel
 configmap.yaml
 secret.yaml
-dist/
-dist/*
 .env*.local
