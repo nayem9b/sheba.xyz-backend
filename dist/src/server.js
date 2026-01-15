@@ -52,8 +52,15 @@ initializeApollo()
 // For serverless environments like Vercel
 exports.default = app_1.default;
 // For local development and traditional deployments
+// Resolve port for both Render and local dev
+const port = process.env.PORT || config_1.default.port;
+// For local development and platform deployments
 if (require.main === module) {
-    app_1.default.listen(config_1.default.port, () => {
-        console.log(`Server is running on port ${config_1.default.port} `);
+    app_1.default.listen(parseInt(port), "0.0.0.0", () => {
+        console.log(`Server is running on port ${port}`);
     });
 }
+// const port = process.env.PORT || 3000;
+// app.listen(port, "0.0.0.0", () => {
+//   console.log(`Server is running on port ${port}`);
+// });
