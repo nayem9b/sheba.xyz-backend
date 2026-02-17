@@ -3,7 +3,7 @@ import prisma from "../../shared/prisma";
 import httpStatus from "http-status";
 import { createToken } from "../../helpers/jwtHelpers";
 import config from "../../config";
-import { Secret } from "jsonwebtoken";
+import { Secret, SignOptions } from "jsonwebtoken";
 
 export const signUpUserTODB = async (data: User): Promise<User> => {
   const result = await prisma.user.create({
@@ -29,12 +29,12 @@ export const loginUserToDB = async (payload: User) => {
     const accessToken: any | undefined = createToken(
       { userId, role },
       config.jwt.access_secret as Secret,
-      config.jwt.access_expires_in as string
+      config.jwt.access_expires_in as SignOptions["expiresIn"]
     );
     const refreshToken: any | undefined = createToken(
       { userId, role },
       config.jwt.refresh_secret as Secret,
-      config.jwt.refresh_expires_in as string
+      config.jwt.refresh_expires_in as SignOptions["expiresIn"]
     );
 
     return {

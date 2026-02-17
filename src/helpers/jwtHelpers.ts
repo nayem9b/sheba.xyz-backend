@@ -1,11 +1,11 @@
-import { JwtPayload, Secret } from "jsonwebtoken";
+import { JwtPayload, Secret, SignOptions } from "jsonwebtoken";
 import jwt from "jsonwebtoken";
 import jwtDecode from "jwt-decode";
 
 export const createToken = (
   payload: Record<string, unknown>,
   secret: Secret,
-  expireTime: string
+  expireTime: SignOptions["expiresIn"],
 ): string => {
   return jwt.sign(payload, secret, {
     expiresIn: expireTime,

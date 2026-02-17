@@ -22,7 +22,7 @@ Email: admin@admin.com
 Password: adminVitamin
 ```
 
-## 📊 Database Schema
+## Database Schema
 
 ![ER Diagram](https://i.ibb.co/bQbtt7d/ER-Diagram.png)
 
@@ -85,7 +85,7 @@ Password: adminVitamin
 - Role management and assignment
 - Profile management system
 
-## 🛠️ Technical Stack
+##  Technical Stack
 
 - **Frontend:** Next.js, TypeScript, Redux
 - **Backend:** Node.js, Express, TypeScript
