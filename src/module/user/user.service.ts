@@ -23,18 +23,18 @@ export const loginUserToDB = async (payload: User) => {
   });
 
   if (!isUserExist) {
-    httpStatus.NOT_FOUND, "User does not exist";
+    (httpStatus.NOT_FOUND, "User does not exist");
   } else {
     const { id: userId, role } = isUserExist;
     const accessToken: any | undefined = createToken(
       { userId, role },
       config.jwt.access_secret as Secret,
-      config.jwt.access_expires_in as SignOptions["expiresIn"]
+      config.jwt.access_expires_in as SignOptions["expiresIn"],
     );
     const refreshToken: any | undefined = createToken(
       { userId, role },
       config.jwt.refresh_secret as Secret,
-      config.jwt.refresh_expires_in as SignOptions["expiresIn"]
+      config.jwt.refresh_expires_in as SignOptions["expiresIn"],
     );
 
     return {
